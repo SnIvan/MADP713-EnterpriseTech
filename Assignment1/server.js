@@ -12,8 +12,6 @@ var router = express.Router();
 
 mongoose.connect('mongodb://localhost:27017/products');
 
-// Middle Route 
-
 router.use(function (req, res, next) {
     // do logging 
     // do authentication 
