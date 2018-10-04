@@ -75,9 +75,9 @@ router.route('/products/:product_id').put(function (req, res) {
     });
 });
 
-router.route('/products/:product_id').delete(function (req, res) {
+router.route('/products').delete(function (req, res) {
 
-    product.remove({ _id: req.param.product_id }, function (err, prod) {
+    product.deleteMany({ }, function (err, prod) {
         if (err) {
             res.send(err);
         }
@@ -90,4 +90,4 @@ router.route('/products/:product_id').delete(function (req, res) {
 app.use(cors());
 app.use('/api', router);
 app.listen(port);
-console.log('REST API is runnning at ' + port);
+console.log('We are live at ' + port);
